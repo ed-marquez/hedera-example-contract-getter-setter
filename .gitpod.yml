@@ -1,7 +1,6 @@
 # Commands to start on workspace startup
 tasks:
-  - name: Dependencies
-    init: |
+  - init: |
       npm install @hedera/sdk
       npm install dotenv
       npm install -g solc
