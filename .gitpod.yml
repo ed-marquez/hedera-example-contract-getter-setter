@@ -1,6 +1,7 @@
 # Commands to start on workspace startup
 tasks:
-  - init: |
+  - name: hedera-example-contract-getter-setter
+    init: |
       npm install -g
       # npm install @hedera/sdk
       # npm install dotenv
