@@ -5,3 +5,4 @@ tasks:
       npm install @hedera/sdk
       npm install dotenv
       npm install -g solc
+      open index.js
