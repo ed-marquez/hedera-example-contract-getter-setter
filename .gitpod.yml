@@ -1,7 +1,8 @@
 # Commands to start on workspace startup
 tasks:
   - init: |
-      npm install @hedera/sdk
-      npm install dotenv
-      npm install -g solc
-      open index.js
+      npm install -g
+      # npm install @hedera/sdk
+      # npm install dotenv
+      # npm install -g solc
+      # open index.js
