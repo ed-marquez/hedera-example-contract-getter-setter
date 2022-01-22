@@ -2,8 +2,7 @@
 tasks:
   - name: hedera-example-contract-getter-setter
     init: |
-      npm install -g
-      # npm install @hedera/sdk
-      # npm install dotenv
-      # npm install -g solc
+      npm install @hedera/sdk
+      npm install dotenv
+      npm install -g solc
       open index.js
