@@ -1,3 +1,7 @@
 # Commands to start on workspace startup
 tasks:
-  - init: yarn install
+  - name: Dependencies & Database
+    init: |
+      npm install @hedera/sdk
+      npm install dotenv
+      npm install -g solc
