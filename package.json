@@ -1,18 +1,16 @@
 {
-  "name": "hedera-contract-getter-setter",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "nodemon src/index.js"
-  },
-  "dependencies": {
-    "@hashgraph/sdk": "2.7.0",
-    "dotenv": "14.2.0",
-    "solc": "0.8.11"
-  },
-  "devDependencies": {
-    "nodemon": "1.18.4"
-  },
-  "keywords": []
+	"name": "hedera-contract-getter-setter",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {},
+	"dependencies": {
+		"@hashgraph/sdk": "2.7.0",
+		"dotenv": "14.2.0",
+		"solc": "0.8.11"
+	},
+	"devDependencies": {
+		"nodemon": "1.18.4"
+	},
+	"keywords": []
 }
