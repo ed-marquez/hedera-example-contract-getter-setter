@@ -1,18 +1,24 @@
 {
-  "name": "hedera-contract-getter-setter",
+  "name": "hedera-example-contract-getter-setter",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ed-marquez/hedera-example-contract-getter-setter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ed-marquez/hedera-example-contract-getter-setter/issues"
+  },
+  "homepage": "https://github.com/ed-marquez/hedera-example-contract-getter-setter#readme",
   "dependencies": {
-    "@hashgraph/sdk": "2.7.0",
-    "dotenv": "14.2.0",
-    "solc": "0.8.11"
-  },
-  "devDependencies": {
-    "nodemon": "1.18.4"
-  },
-  "keywords": []
+    "@hashgraph/sdk": "^2.7.0",
+    "dotenv": "^14.2.0",
+    "solc": "^0.8.11"
+  }
 }
