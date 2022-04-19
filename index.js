@@ -18,8 +18,6 @@ const operatorId = AccountId.fromString(process.env.OPERATOR_ID);
 const operatorKey = PrivateKey.fromString(process.env.OPERATOR_PVKEY);
 
 const client = Client.forTestnet().setOperator(operatorId, operatorKey);
-client.setMaxTransactionFee(new Hbar(0.75));
-client.setMaxQueryPayment(new Hbar(0.01));
 
 async function main() {
 	// Import the compiled contract bytecode
@@ -40,7 +38,9 @@ async function main() {
 	const contractInstantiateTx = new ContractCreateTransaction()
 		.setBytecodeFileId(bytecodeFileId)
 		.setGas(100000)
-		.setConstructorParameters(new ContractFunctionParameters().addString("Alice").addUint256(111111));
+		.setConstructorParameters(
+			new ContractFunctionParameters().addString("Alice").addUint256(111111)
+		);
 	const contractInstantiateSubmit = await contractInstantiateTx.execute(client);
 	const contractInstantiateRx = await contractInstantiateSubmit.getReceipt(client);
 	const contractId = contractInstantiateRx.contractId;
@@ -61,7 +61,10 @@ async function main() {
 	const contractExecuteTx = new ContractExecuteTransaction()
 		.setContractId(contractId)
 		.setGas(100000)
-		.setFunction("setMobileNumber", new ContractFunctionParameters().addString("Bob").addUint256(222222));
+		.setFunction(
+			"setMobileNumber",
+			new ContractFunctionParameters().addString("Bob").addUint256(222222)
+		);
 	const contractExecuteSubmit = await contractExecuteTx.execute(client);
 	const contractExecuteRx = await contractExecuteSubmit.getReceipt(client);
 	console.log(`- Contract function call status: ${contractExecuteRx.status} \n`);
