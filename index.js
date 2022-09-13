@@ -10,6 +10,7 @@ const {
 	ContractExecuteTransaction,
 	ContractCallQuery,
 	Hbar,
+	ContractCreateFlow,
 } = require("@hashgraph/sdk");
 const fs = require("fs");
 
@@ -23,20 +24,9 @@ async function main() {
 	// Import the compiled contract bytecode
 	const contractBytecode = fs.readFileSync("LookupContract_sol_LookupContract.bin");
 
-	// Create a file on Hedera and store the bytecode
-	const fileCreateTx = new FileCreateTransaction()
-		.setContents(contractBytecode)
-		.setKeys([operatorKey])
-		.freezeWith(client);
-	const fileCreateSign = await fileCreateTx.sign(operatorKey);
-	const fileCreateSubmit = await fileCreateSign.execute(client);
-	const fileCreateRx = await fileCreateSubmit.getReceipt(client);
-	const bytecodeFileId = fileCreateRx.fileId;
-	console.log(`- The bytecode file ID is: ${bytecodeFileId} \n`);
-
 	// Instantiate the smart contract
-	const contractInstantiateTx = new ContractCreateTransaction()
-		.setBytecodeFileId(bytecodeFileId)
+	const contractInstantiateTx = new ContractCreateFlow()
+		.setBytecode(contractBytecode)
 		.setGas(100000)
 		.setConstructorParameters(
 			new ContractFunctionParameters().addString("Alice").addUint256(111111)
