@@ -5,9 +5,8 @@
 	"main": "src/index.js",
 	"scripts": {},
 	"dependencies": {
-		"@hashgraph/sdk": "2.18",
-		"dotenv": "14.2.0",
-		"solc": "0.8.11"
+		"@hashgraph/sdk": "^2.40.0",
+		"dotenv": "^16.4.1"
 	},
 	"devDependencies": {
 		"nodemon": "1.18.4"
